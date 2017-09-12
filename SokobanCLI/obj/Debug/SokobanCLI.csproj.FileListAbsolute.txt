@@ -1,0 +1,7 @@
+C:\Users\Peter-Jan\SCHPR\INF\Modeleren3\Sokoban\SokobanCLI\bin\Debug\SokobanCLI.exe.config
+C:\Users\Peter-Jan\SCHPR\INF\Modeleren3\Sokoban\SokobanCLI\bin\Debug\SokobanCLI.exe
+C:\Users\Peter-Jan\SCHPR\INF\Modeleren3\Sokoban\SokobanCLI\bin\Debug\SokobanCLI.pdb
+C:\Users\Peter-Jan\SCHPR\INF\Modeleren3\Sokoban\SokobanCLI\obj\Debug\SokobanCLI.csprojResolveAssemblyReference.cache
+C:\Users\Peter-Jan\SCHPR\INF\Modeleren3\Sokoban\SokobanCLI\obj\Debug\SokobanCLI.csproj.CoreCompileInputs.cache
+C:\Users\Peter-Jan\SCHPR\INF\Modeleren3\Sokoban\SokobanCLI\obj\Debug\SokobanCLI.exe
+C:\Users\Peter-Jan\SCHPR\INF\Modeleren3\Sokoban\SokobanCLI\obj\Debug\SokobanCLI.pdb
