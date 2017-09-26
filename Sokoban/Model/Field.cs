@@ -14,5 +14,10 @@ namespace SokobanCLI
             {
             }
         }
+
+        public void MoveMovable(Direction direction)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
