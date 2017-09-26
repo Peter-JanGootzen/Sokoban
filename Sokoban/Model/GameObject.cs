@@ -5,38 +5,44 @@ using System.Text;
 
 namespace SokobanCLI
 {
-    public abstract class SpelObject : Speler
+    public abstract class GameObject
     {
-        public SpelObject _Noord
+
+        public GameObject _North
         {
-            get => default(SpelObject);
+            get => default(GameObject);
             set
             {
             }
         }
 
-        public SpelObject _West
+        public GameObject _West
         {
-            get => default(SpelObject);
+            get => default(GameObject);
             set
             {
             }
         }
 
-        public SpelObject _Oost
+        public GameObject _East
         {
-            get => default(SpelObject);
+            get => default(GameObject);
             set
             {
             }
         }
 
-        public SpelObject _Zuid
+        public GameObject _South
         {
-            get => default(SpelObject);
+            get => default(GameObject);
             set
             {
             }
+        }
+
+        public virtual Boolean MoveOnThis()
+        {
+            return false;
         }
     }
 }

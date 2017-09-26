@@ -7,7 +7,7 @@ namespace SokobanCLI
 {
     public class Parser
     {
-        public void LaadLevel()
+        public void LoadLevel()
         {
             throw new System.NotImplementedException();
         }

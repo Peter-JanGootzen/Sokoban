@@ -5,11 +5,15 @@ using System.Text;
 
 namespace SokobanCLI
 {
-    public class Speler
+    public class Game
     {
-        public void Beweeg()
+
+        public Maze _Doolhof
         {
-            throw new System.NotImplementedException();
+            get => default(Maze);
+            set
+            {
+            }
         }
     }
 }

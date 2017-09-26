@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{E5A11F27-C111-4657-9F30-6E415FA9E3AD}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>SokobanCLI</RootNamespace>
-    <AssemblyName>SokobanCLI</AssemblyName>
+    <RootNamespace>Sokoban</RootNamespace>
+    <AssemblyName>Sokoban</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -42,22 +42,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Beweegbaar.cs" />
-    <Compile Include="Opstaanbaar.cs" />
+    <Compile Include="Direction.cs" />
+    <Compile Include="Model\Destination.cs" />
+    <Compile Include="Model\Movable.cs" />
+    <Compile Include="Model\Field.cs" />
     <Compile Include="Presentation\CLI.cs" />
     <Compile Include="Procces\Controller.cs" />
-    <Compile Include="Model\Doolhof.cs" />
+    <Compile Include="Model\Maze.cs" />
     <Compile Include="Model\GameObject.cs" />
-    <Compile Include="Model\Krat.cs" />
-    <Compile Include="Model\Bestemming.cs" />
-    <Compile Include="Model\Muur.cs" />
-    <Compile Include="Model\Program.cs" />
-    <Compile Include="Model\Player.cs" />
+    <Compile Include="Model\Crate.cs" />
+    <Compile Include="Model\Wall.cs" />
+    <Compile Include="Procces\Program.cs" />
     <Compile Include="Procces\Parser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Model\Truck.cs" />
-    <Compile Include="Model\Veld.cs" />
-    <Compile Include="Model\Spel.cs" />
+    <Compile Include="Model\Game.cs" />
+    <Compile Include="Model\Spacer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

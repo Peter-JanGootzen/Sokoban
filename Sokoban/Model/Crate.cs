@@ -5,7 +5,7 @@ using System.Text;
 
 namespace SokobanCLI
 {
-    public class Muur : SpelObject
+    public class Crate : Movable
     {
     }
 }

@@ -5,11 +5,11 @@ using System.Text;
 
 namespace SokobanCLI
 {
-    public abstract class Opstaanbaar
+    public class Field : GameObject
     {
-        public Beweegbaar _Beweegbaar
+        public Movable _Movable
         {
-            get => default(Beweegbaar);
+            get => default(Movable);
             set
             {
             }

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace SokobanCLI
 {
-    public class Veld : Opstaanbaar
+    public class Destination : Field
     {
     }
 }

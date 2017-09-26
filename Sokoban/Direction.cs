@@ -5,7 +5,8 @@ using System.Text;
 
 namespace SokobanCLI
 {
-    public class Truck : Movable
+    public enum Direction
     {
+        UP, DOWN, LEFT, RIGHT
     }
 }

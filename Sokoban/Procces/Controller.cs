@@ -15,15 +15,15 @@ namespace SokobanCLI
             }
         }
 
-        public Spel _Spel
+        public Game _Spel
         {
-            get => default(Spel);
+            get => default(Game);
             set
             {
             }
         }
 
-        public CLI CLI
+        public CLI _CLI
         {
             get => default(CLI);
             set
@@ -31,7 +31,12 @@ namespace SokobanCLI
             }
         }
 
-        public void Beweeg()
+        public void Move()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void CheckWin()
         {
             throw new System.NotImplementedException();
         }

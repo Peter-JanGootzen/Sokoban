@@ -5,27 +5,35 @@ using System.Text;
 
 namespace SokobanCLI
 {
-    public class Doolhof
+    public class Maze
     {
-        public SpelObject _EersteSpelObject
+        public GameObject _FirstGameObject
         {
-            get => default(SpelObject);
+            get => default(GameObject);
             set
             {
             }
         }
 
-        public SpelObject _LaatsteSpelObject
+        public GameObject _LastGameObject
         {
-            get => default(SpelObject);
+            get => default(GameObject);
             set
             {
             }
         }
 
-        public int _Lengte
+        public int _Length
         {
             get => default(int);
+            set
+            {
+            }
+        }
+
+        public Truck _Truck
+        {
+            get => default(Truck);
             set
             {
             }

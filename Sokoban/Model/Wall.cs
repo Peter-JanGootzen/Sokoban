@@ -5,7 +5,7 @@ using System.Text;
 
 namespace SokobanCLI
 {
-    public class Bestemming : Opstaanbaar
+    public class Wall : GameObject
     {
     }
 }
