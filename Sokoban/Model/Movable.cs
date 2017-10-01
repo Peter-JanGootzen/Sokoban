@@ -37,14 +37,7 @@ namespace SokobanCLI
                     break;
             }
 
-            if(NextDestination.GetType() is Field && NextDestination == null)
-            {
-                NextDestination = this;
-                _CurrentDestination = null;
-            } else if (this.GetType() is Truck && NextDestination.GetType() is Crate)
-            {
-                
-            }
+            NextDestination.MoveOnThis();
         }
     }
 }
