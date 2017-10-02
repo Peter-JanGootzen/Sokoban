@@ -47,7 +47,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="SokobanCLI.Crate">
-    <Position X="10" Y="7.75" Width="1.5" />
+    <Position X="9" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\Crate.cs</FileName>
@@ -119,7 +119,7 @@
     </AssociationLine>
     <AssociationLine Name="_Spel" Type="SokobanCLI.Game">
       <MemberNameLabel ManuallyPlaced="true">
-        <Position X="0.352" Y="0.11" />
+        <Position X="0.258" Y="0.1" />
       </MemberNameLabel>
     </AssociationLine>
     <AssociationLine Name="_CLI" Type="SokobanCLI.CLI">
@@ -140,11 +140,11 @@
   <Class Name="SokobanCLI.Game">
     <Position X="3" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAIAQBA=</HashCode>
       <FileName>Model\Game.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="_Doolhof" />
+      <Property Name="_Maze" />
     </ShowAsAssociation>
   </Class>
   <Class Name="SokobanCLI.Parser">
@@ -163,13 +163,21 @@
   </Class>
   <Class Name="SokobanCLI.Field">
     <Position X="4.75" Y="5.75" Width="1.5" />
+    <AssociationLine Name="_Movable" Type="SokobanCLI.Movable">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="3.255" Y="-0.305" />
+      </MemberNameLabel>
+    </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFAAAAA=</HashCode>
       <FileName>Model\Field.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="_Movable" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="SokobanCLI.Destination">
-    <Position X="4.75" Y="7.5" Width="1.5" />
+    <Position X="4.75" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\Destination.cs</FileName>
@@ -190,7 +198,7 @@
     </TypeIdentifier>
   </Class>
   <Enum Name="SokobanCLI.Direction">
-    <Position X="7.75" Y="6.75" Width="1.5" />
+    <Position X="11.5" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAICAAAgAAAAAAAAAAA=</HashCode>
       <FileName>Direction.cs</FileName>

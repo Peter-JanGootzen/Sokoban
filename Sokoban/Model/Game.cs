@@ -8,12 +8,29 @@ namespace SokobanCLI
     public class Game
     {
 
-        public Maze _Doolhof
+        private int _DestinationsFilled;
+        public int DestinationsFilled
+        {
+            get;
+        }
+
+        public Maze _Maze
         {
             get => default(Maze);
             set
             {
             }
         }
+
+        public void SetDestinationsFilled(int value)
+        {
+            _DestinationsFilled = _DestinationsFilled + value;
+        }
+        public Game(Maze maze)
+        {
+            _Maze = maze;
+            _DestinationsFilled = 0;
+        }
+
     }
 }
