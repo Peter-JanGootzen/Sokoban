@@ -305,3 +305,5 @@ __pycache__/
 OpenCover/
 
 Sokoban/Sokoban\.csproj
+
+*.ide
