@@ -10,6 +10,8 @@ namespace SokobanCLI
     {
         static void Main(string[] args)
         {
+            Parser p = new Parser();
+            p.LoadLevel();
         }
     }
 }
