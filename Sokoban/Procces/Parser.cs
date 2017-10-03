@@ -10,6 +10,7 @@ namespace SokobanCLI
 {
     public class Parser
     {
+        Tile[,] tiles;
         public Game ParseLevelFile()
         {
             OpenFileDialog fileChooser = new OpenFileDialog();
@@ -34,30 +35,30 @@ namespace SokobanCLI
                 {
                     for (int x = 0; x < horizontalText[y].Length; x++)
                     {
-                            switch (horizontalText[y][x] + "")
-                            {
-                                case "#":
-                                    tiles[x,y] = new Wall();
-                                    break;
-                                case ".":
-                                    tiles[x, y] = new Field();
-                                    break;
-                                case " ":
-                                    tiles[x, y] = new Spacer();
-                                    break;
-                                case "@"://HAVE TO ADD TRUCK TO FIELD CONSTRUCTOR.
-                                    tiles[x, y] = new Field();
-                                    break;
-                                case "o"://HAVE TO ADD CRATE TO FIELD CONSTRUCTOR
-                                    tiles[x, y] = new Field();
-                                    break;
-                                case "x":
-                                    tiles[x, y] = new Destination();
-                                    break;
-                            }                                 
+                        switch (horizontalText[y][x] + "")
+                        {
+                            case "#":
+                                tiles[x, y] = new Wall();
+                                break;
+                            case ".":
+                                tiles[x, y] = new Field();
+                                break;
+                            case " ":
+                                tiles[x, y] = new Spacer();
+                                break;
+                            case "@"://HAVE TO ADD TRUCK TO FIELD CONSTRUCTOR.
+                                tiles[x, y] = new Field(new Truck());
+                                break;
+                            case "o"://HAVE TO ADD CRATE TO FIELD CONSTRUCTOR
+                                tiles[x, y] = new Field(new Crate());
+                                break;
+                            case "x":
+                                tiles[x, y] = new Destination();
+                                break;
+                        }
                     }
                 }
-                return tiles;
+                return null;
             }
             return null;
         }
@@ -81,16 +82,22 @@ namespace SokobanCLI
                                 Console.Write("#");
                                 break;
                             case "Field":
-                                Console.Write(".");
+                                if(tiles[x, y]._Movable == null)
+                                {
+                                    Console.Write(".");
+                                }
+                                else if(tiles[x, y]._Movable.GetType().Name.Equals("Crate"))
+                                { 
+                                    Console.Write("o");
+                                }
+                                else if (tiles[x, y]._Movable.GetType().Name.Equals("Truck"))
+                                {
+                                    Console.Write("@");
+                                }
+
                                 break;
                             case "Spacer":
                                 Console.Write(" ");
-                                break;
-                            case "Truck"://HAVE TO ADD TRUCK TO FIELD
-                                Console.Write("@");
-                                break;
-                            case "Crate"://HAVE TO ADD CRATE TO FIELD
-                                Console.Write("o");
                                 break;
                             case "Destination":
                                 Console.Write("x");

@@ -12,6 +12,7 @@ namespace SokobanCLI
         static void Main(string[] args)
         {
             new Controller();
+            Console.ReadLine();
         }
     }
 }

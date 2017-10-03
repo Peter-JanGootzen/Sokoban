@@ -21,7 +21,11 @@ namespace SokobanCLI
         {
             _Movable = movable;
         }
-        
+
+        public Field()
+        {
+        }
+
         public virtual bool MoveOnThis(Crate crate, Direction direction)
         {
             if (_Movable == null)

@@ -7,6 +7,10 @@ namespace SokobanCLI
 {
     public class Destination : Field
     {
+        public Destination()
+        {
+        }
+
         public Destination(Movable movable) : base(movable)
         {
         }
