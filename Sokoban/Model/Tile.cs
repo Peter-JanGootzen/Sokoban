@@ -10,34 +10,32 @@ namespace SokobanCLI
 
         public Tile _North
         {
-            get => default(Tile);
-            set
-            {
-            }
+            get;
+            set;
         }
 
         public Tile _West
         {
-            get => default(Tile);
-            set
-            {
-            }
+            get;
+            set;
         }
 
         public Tile _East
         {
-            get => default(Tile);
-            set
-            {
-            }
+            get;
+            set;
         }
 
         public Tile _South
         {
-            get => default(Tile);
-            set
-            {
-            }
+            get;
+            set;
+        }
+
+        public virtual Movable _Movable
+        {
+            get => null;
+            set { }
         }
 
         public virtual Boolean MoveOnThis(Movable movable, Direction direction)

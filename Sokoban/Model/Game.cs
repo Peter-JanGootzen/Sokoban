@@ -11,15 +11,13 @@ namespace SokobanCLI
         private int _DestinationsFilled;
         public int DestinationsFilled
         {
-            get;
+            get => _DestinationsFilled;
         }
 
         public Maze _Maze
         {
-            get => default(Maze);
-            set
-            {
-            }
+            get;
+            set;
         }
 
         private void UpDestinationsFilled()

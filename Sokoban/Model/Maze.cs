@@ -7,36 +7,35 @@ namespace SokobanCLI
 {
     public class Maze
     {
+
+        public int _AmountOfDestinations
+        {
+            get;
+            set;
+        }
+
         public Tile _FirstTile
         {
-            get => default(Tile);
-            set
-            {
-            }
+            get;
+            set;
         }
 
         public Tile _LastTile
         {
-            get => default(Tile);
-            set
-            {
-            }
+            get;
+            set;
         }
 
         public int _Length
         {
-            get => default(int);
-            set
-            {
-            }
+            get;
+            set;
         }
 
         public Truck _Truck
         {
-            get => default(Truck);
-            set
-            {
-            }
+            get;
+            set;
         }
     }
 }

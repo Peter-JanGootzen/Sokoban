@@ -11,14 +11,12 @@ namespace SokobanCLI
         // TODO
         // Get rid of DirectionConverter, something with delegates or dynamic type overloading.
 
-        public Movable _Movable
+        public override Movable _Movable
         {
-            get => default(Movable);
-            set
-            {
-            }
+            get;
+            set;
         }
-
+        
         public virtual bool MoveOnThis(Crate crate, Direction direction)
         {
             if (_Movable == null)

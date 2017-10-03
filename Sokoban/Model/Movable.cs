@@ -9,30 +9,28 @@ namespace SokobanCLI
     {
         public Field _Field
         {
-            get => default(Field);
-            set
-            {
-            }
+            get;
+            set;
         }
 
         public bool MoveNorth()
         {
-                return _Field._North.MoveOnThis(this, Direction.UP);
+            return _Field._North.MoveOnThis(this, Direction.UP);
         }
 
         public bool MoveEast()
         {
-                return _Field._East.MoveOnThis(this, Direction.RIGHT);
+            return _Field._East.MoveOnThis(this, Direction.RIGHT);
         }
 
         public bool MoveSouth()
         {
-                return _Field._South.MoveOnThis(this, Direction.DOWN);
+            return _Field._South.MoveOnThis(this, Direction.DOWN);
         }
 
         public bool MoveWest()
         {
-                return _Field._North.MoveOnThis(this, Direction.LEFT);
+            return _Field._West.MoveOnThis(this, Direction.LEFT);
         }
     }
 }

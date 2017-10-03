@@ -7,38 +7,57 @@ namespace SokobanCLI
 {
     public class Controller
     {
-        public Parser _Parser
+        private Parser _Parser;
+
+        private CLI _CLI;
+
+        private Game _Game;
+
+       
+        public Controller()
         {
-            get => default(Parser);
-            set
+            _Parser = new Parser();
+            if (LoadLevel())
             {
+                _CLI = new CLI(this);
+                while (!CheckTruckWon())
+                {
+                    if (_CLI.CatchInput())
+                        _CLI.RefreshCLI();
+                }
             }
+
         }
 
-        public CLI _CLI
+        public bool LoadLevel()
         {
-            get => default(CLI);
-            set
-            {
-            }
+            _Game = _Parser.ParseLevelFile();
+            return _Game != null;
         }
 
-        public Game _Game
+        public bool MoveTruckNorth()
         {
-            get => default(Game);
-            set
-            {
-            }
+            return _Game._Maze._Truck.MoveNorth();
         }
 
-        public void Move()
+        public bool MoveTruckEast()
         {
-            throw new System.NotImplementedException();
+            return _Game._Maze._Truck.MoveEast();
         }
 
-        public void CheckWin()
+        public bool MoveTruckSouth()
         {
-            throw new System.NotImplementedException();
+            return _Game._Maze._Truck.MoveSouth();
+        }
+
+        public bool MoveTruckWest()
+        {
+            return _Game._Maze._Truck.MoveWest();
+        }
+
+        public bool CheckTruckWon()
+        {
+            return _Game.DestinationsFilled == _Game._Maze._AmountOfDestinations;
         }
     }
 }

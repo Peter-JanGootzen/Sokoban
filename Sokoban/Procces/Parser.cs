@@ -9,7 +9,7 @@ namespace SokobanCLI
 {
     public class Parser
     {
-        public Game LoadLevel()
+        public Game ParseLevelFile()
         {
             OpenFileDialog fileChooser = new OpenFileDialog();
             if (fileChooser.ShowDialog() == DialogResult.OK)
