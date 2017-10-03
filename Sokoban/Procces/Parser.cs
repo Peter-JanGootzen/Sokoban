@@ -38,10 +38,12 @@ namespace SokobanCLI
                     verticalText[i] = text;
                     text = "";
                 }
-                
+
             }
             return null;
         }
+    }
+}
         /*
         public void printGame()
         {
@@ -56,5 +58,4 @@ namespace SokobanCLI
             }
         }
         */
-  }
                 
