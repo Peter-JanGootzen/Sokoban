@@ -22,10 +22,16 @@ namespace SokobanCLI
             }
         }
 
-        public void SetDestinationsFilled(int value)
+        private void UpDestinationsFilled()
         {
-            _DestinationsFilled = _DestinationsFilled + value;
+            _DestinationsFilled++;
         }
+
+        private void DownDestinationFilled()
+        {
+            _DestinationsFilled--;
+        }
+
         public Game(Maze maze)
         {
             _Maze = maze;

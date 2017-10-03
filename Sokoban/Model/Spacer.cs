@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Sokoban
 {
-    public class Spacer : SokobanCLI.GameObject
+    public class Spacer : SokobanCLI.Tile
     {
     }
 }

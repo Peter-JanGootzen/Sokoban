@@ -7,17 +7,17 @@ namespace SokobanCLI
 {
     public class Maze
     {
-        public GameObject _FirstGameObject
+        public Tile _FirstTile
         {
-            get => default(GameObject);
+            get => default(Tile);
             set
             {
             }
         }
 
-        public GameObject _LastGameObject
+        public Tile _LastTile
         {
-            get => default(GameObject);
+            get => default(Tile);
             set
             {
             }

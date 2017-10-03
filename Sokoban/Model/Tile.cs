@@ -5,42 +5,42 @@ using System.Text;
 
 namespace SokobanCLI
 {
-    public abstract class GameObject
+    public abstract class Tile
     {
 
-        public GameObject _North
+        public Tile _North
         {
-            get => default(GameObject);
+            get => default(Tile);
             set
             {
             }
         }
 
-        public GameObject _West
+        public Tile _West
         {
-            get => default(GameObject);
+            get => default(Tile);
             set
             {
             }
         }
 
-        public GameObject _East
+        public Tile _East
         {
-            get => default(GameObject);
+            get => default(Tile);
             set
             {
             }
         }
 
-        public GameObject _South
+        public Tile _South
         {
-            get => default(GameObject);
+            get => default(Tile);
             set
             {
             }
         }
 
-        public virtual Boolean MoveOnThis()
+        public virtual Boolean MoveOnThis(Movable movable, Direction direction)
         {
             return false;
         }

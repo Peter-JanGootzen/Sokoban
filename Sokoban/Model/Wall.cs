@@ -5,7 +5,7 @@ using System.Text;
 
 namespace SokobanCLI
 {
-    public class Wall : GameObject
+    public class Wall : Tile
     {
     }
 }

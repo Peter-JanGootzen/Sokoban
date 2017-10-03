@@ -5,8 +5,12 @@ using System.Text;
 
 namespace SokobanCLI
 {
-    public class Field : GameObject
+    public class Field : Tile
     {
+
+        // TODO
+        // Get rid of DirectionConverter, something with delegates or dynamic type overloading.
+
         public Movable _Movable
         {
             get => default(Movable);
@@ -15,9 +19,39 @@ namespace SokobanCLI
             }
         }
 
-        public void MoveMovable(Direction direction)
+        public virtual bool MoveOnThis(Crate crate, Direction direction)
         {
-            throw new System.NotImplementedException();
+            if (_Movable == null)
+            {
+                _Movable = crate;
+            }
+            else
+                return false;
+            return true;
+        }
+
+        public bool MoveOnThis(Truck truck, Direction direction)
+        {
+            if (_Movable == null)
+            {
+                _Movable = truck;
+                return true;
+            }
+            else
+            {
+                if (DirectionConverter.Convert(this, direction).MoveOnThis(_Movable, direction))
+                {
+                    _Movable = truck;
+                    return true;
+                }
+                else
+                    return false;
+            }
+        }
+        
+        public override bool MoveOnThis(Movable movable, Direction direction)
+        {
+            return MoveOnThis(movable as dynamic, direction);
         }
     }
 }

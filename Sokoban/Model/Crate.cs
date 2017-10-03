@@ -7,5 +7,6 @@ namespace SokobanCLI
 {
     public class Crate : Movable
     {
+        
     }
 }

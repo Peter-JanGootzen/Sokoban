@@ -5,39 +5,34 @@ using System.Text;
 
 namespace SokobanCLI
 {
-    public abstract class Movable : GameObject
+    public abstract class Movable
     {
-        private Destination _CurrentDestination;
-
-        public void setCurrentDestination(Destination Destination)
+        public Field _Field
         {
-            this._CurrentDestination = Destination;
+            get => default(Field);
+            set
+            {
+            }
         }
 
-        public void Move(Direction Direction)
+        public bool MoveNorth()
         {
-            GameObject NextDestination;
+                return _Field._North.MoveOnThis(this, Direction.UP);
+        }
 
-            switch (Direction)
-            {
-                case Direction.UP:
-                    NextDestination = _North;
-                    break;
-                case Direction.DOWN:
-                    NextDestination = _South;
-                    break;
-                case Direction.LEFT:
-                    NextDestination = _West;
-                    break;
-                case Direction.RIGHT:
-                    NextDestination = _East;
-                    break;
-                default:
-                    NextDestination = null;
-                    break;
-            }
+        public bool MoveEast()
+        {
+                return _Field._East.MoveOnThis(this, Direction.RIGHT);
+        }
 
-            NextDestination.MoveOnThis();
+        public bool MoveSouth()
+        {
+                return _Field._South.MoveOnThis(this, Direction.DOWN);
+        }
+
+        public bool MoveWest()
+        {
+                return _Field._North.MoveOnThis(this, Direction.LEFT);
         }
     }
 }

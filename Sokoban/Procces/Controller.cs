@@ -15,17 +15,17 @@ namespace SokobanCLI
             }
         }
 
-        public Game _Spel
+        public CLI _CLI
         {
-            get => default(Game);
+            get => default(CLI);
             set
             {
             }
         }
 
-        public CLI _CLI
+        public Game _Game
         {
-            get => default(CLI);
+            get => default(Game);
             set
             {
             }
