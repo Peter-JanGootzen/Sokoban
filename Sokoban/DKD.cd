@@ -55,11 +55,6 @@
   </Class>
   <Class Name="SokobanCLI.Controller">
     <Position X="0.5" Y="2.5" Width="1.5" />
-    <AssociationLine Name="_Parser" Type="SokobanCLI.Parser">
-      <MemberNameLabel ManuallyPlaced="true">
-        <Position X="0.162" Y="0.3" />
-      </MemberNameLabel>
-    </AssociationLine>
     <AssociationLine Name="_CLI" Type="SokobanCLI.CLI">
       <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
         <Position X="-0.807" Y="0.133" Height="0.182" Width="0.628" />
@@ -75,7 +70,6 @@
       <FileName>Procces\Controller.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="_Parser" />
       <Property Name="_CLI" />
       <Property Name="_Game" />
     </ShowAsAssociation>
@@ -85,13 +79,6 @@
     <TypeIdentifier>
       <HashCode>AAAAAAgAAAAAAAgAAAAgAAAAAAAAAAAAAAAAAoAAAAA=</HashCode>
       <FileName>Model\Tile.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="SokobanCLI.Parser">
-    <Position X="0.5" Y="0.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Procces\Parser.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SokobanCLI.CLI">
@@ -170,6 +157,13 @@
     <ShowAsAssociation>
       <Property Name="_Maze" />
     </ShowAsAssociation>
+  </Class>
+  <Class Name="SokobanCLI.Parser">
+    <Position X="0.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAABAAIAAAAAAAQEAAEAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Procces\Parser.cs</FileName>
+    </TypeIdentifier>
   </Class>
   <Enum Name="SokobanCLI.Direction">
     <Position X="11.5" Y="3.75" Width="1.5" />

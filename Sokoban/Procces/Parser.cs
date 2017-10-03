@@ -4,52 +4,108 @@ using System.Linq;
 using System.Text;
 using System.IO;
 using System.Windows.Forms;
+using Sokoban;
 
 namespace SokobanCLI
 {
     public class Parser
     {
-        public Game LoadLevel()
+
+        Tile[,] tiles;
+        public Tile[,] LoadLevel()
         {
             OpenFileDialog fileChooser = new OpenFileDialog();
             if (fileChooser.ShowDialog() == DialogResult.OK)
             {
                 String[] horizontalText = File.ReadAllLines(fileChooser.FileName.ToString());
-                int largestSize = 0;
+                int largestHeight = 0;
+                int largestWidth = 0;
                 for (int i = 0; i < horizontalText.Length; i++)
                 {
-                    if (horizontalText[i].Length > largestSize)
+                    if (horizontalText[i].Length > largestWidth)
                     {
-                        largestSize = horizontalText[i].Length;
+                        largestWidth = horizontalText[i].Length;
+                    }
+                    if(horizontalText.Length > largestHeight)
+                    {
+                        largestHeight = horizontalText.Length;
                     }
                 }
-
-                String[] verticalText = new String[largestSize];
-                String text = "";
-                for (int i = 0; i < largestSize; i++)
+                tiles = new Tile[largestWidth,largestHeight];
+                for (int y = 0; y < largestHeight; y++)
                 {
-                    for (int y = 0; y < horizontalText.Length; y++)
+                    for (int x = 0; x < horizontalText[y].Length; x++)
                     {
-                        if (horizontalText[y].Length > i)
-                        {
-                            text = text + horizontalText[y][i];
-                        }
+                            switch (horizontalText[y][x] + "")
+                            {
+                                case "#":
+                                    tiles[x,y] = new Wall();
+                                    break;
+                                case ".":
+                                    tiles[x, y] = new Field();
+                                    break;
+                                case " ":
+                                    tiles[x, y] = new Spacer();
+                                    break;
+                                case "@"://HAVE TO ADD TRUCK TO FIELD CONSTRUCTOR.
+                                    tiles[x, y] = new Field();
+                                    break;
+                                case "o"://HAVE TO ADD CRATE TO FIELD CONSTRUCTOR
+                                    tiles[x, y] = new Field();
+                                    break;
+                                case "x":
+                                    tiles[x, y] = new Destination();
+                                    break;
+                            }                                 
                     }
-                    verticalText[i] = text;
-                    text = "";
                 }
-                for (int i = 0; i < horizontalText.Length; i++)
-                {
-                    for (int y = 0; y < horizontalText[i].Length; y++)
-                    {
-                        Console.Write(horizontalText[i][y] + "");
-                    }
-                    Console.WriteLine();
-                }
+                return tiles;
             }
-            
             return null;
         }
+
+        public void GenerateReferences()
+        {
+            //TODO
+        }
+
+        public void printMaze(Tile[,] tiles)
+        {
+            for (int y = 0; y < tiles.GetLength(1); y++)
+            {
+                for (int x = 0; x < tiles.GetLength(0); x++)
+                {
+                    if (tiles[x, y] != null)
+                    {
+                        switch (tiles[x,y].GetType().Name)
+                        {
+                            case "Wall":
+                                Console.Write("#");
+                                break;
+                            case "Field":
+                                Console.Write(".");
+                                break;
+                            case "Spacer":
+                                Console.Write(" ");
+                                break;
+                            case "Truck"://HAVE TO ADD TRUCK TO FIELD
+                                Console.Write("@");
+                                break;
+                            case "Crate"://HAVE TO ADD CRATE TO FIELD
+                                Console.Write("o");
+                                break;
+                            case "Destination":
+                                Console.Write("x");
+                                break;
+                        }
+                    }
+
+                }
+                Console.WriteLine();
+
+            }
+        }
+
     }
 }
                 
