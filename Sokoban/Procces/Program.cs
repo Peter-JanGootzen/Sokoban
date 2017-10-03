@@ -11,9 +11,7 @@ namespace SokobanCLI
         [STAThread]
         static void Main(string[] args)
         {
-            Parser p = new Parser();
-            p.printMaze(p.LoadLevel());
-            Console.ReadLine();
+            new Controller();
         }
     }
 }

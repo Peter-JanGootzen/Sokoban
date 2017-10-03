@@ -7,6 +7,10 @@ namespace SokobanCLI
 {
     public class Destination : Field
     {
+        public Destination(Movable movable) : base(movable)
+        {
+        }
+
         public override bool MoveOnThis(Crate crate, Direction direction)
         {
             if (_Movable == null)

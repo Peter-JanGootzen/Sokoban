@@ -10,9 +10,7 @@ namespace SokobanCLI
 {
     public class Parser
     {
-
-        Tile[,] tiles;
-        public Tile[,] LoadLevel()
+        public Game ParseLevelFile()
         {
             OpenFileDialog fileChooser = new OpenFileDialog();
             if (fileChooser.ShowDialog() == DialogResult.OK)

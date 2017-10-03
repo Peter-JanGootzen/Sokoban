@@ -7,35 +7,45 @@ namespace SokobanCLI
 {
     public class Game
     {
-
-        private int _DestinationsFilled;
-        public int DestinationsFilled
-        {
-            get;
-        }
-
         public Maze _Maze
         {
-            get => default(Maze);
-            set
-            {
-            }
+            get;
+            set;
         }
-
-        private void UpDestinationsFilled()
-        {
-            _DestinationsFilled++;
-        }
-
-        private void DownDestinationFilled()
-        {
-            _DestinationsFilled--;
-        }
-
         public Game(Maze maze)
         {
             _Maze = maze;
-            _DestinationsFilled = 0;
+        }
+
+        public bool CheckTruckWon()
+        {
+            int DestinationsFilled = 0;
+            Tile CurrentXAxisTile = _Maze._FirstTile;
+            Tile CurrentYAxisTile = _Maze._FirstTile;
+            while (CurrentYAxisTile != null)
+            {
+                if (CurrentXAxisTile._Movable != null && CheckDestinationFilled(CurrentXAxisTile as dynamic, CurrentXAxisTile._Movable))
+                    DestinationsFilled++;
+
+                if (CurrentXAxisTile._East != null)
+                    CurrentXAxisTile = CurrentXAxisTile._East;
+                else
+                {
+                    CurrentYAxisTile = CurrentYAxisTile._South;
+                    CurrentXAxisTile = CurrentYAxisTile;
+                }
+            }
+            return DestinationsFilled == _Maze._AmountOfDestinations;
+        }
+
+        private bool CheckDestinationFilled(Destination destination, Crate crate)
+        {
+            return true;
+        }
+
+        private bool CheckDestinationFilled(Field field, Movable movable)
+        {
+            return false;
         }
 
     }
