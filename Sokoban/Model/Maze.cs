@@ -37,5 +37,7 @@ namespace SokobanCLI
             get;
             set;
         }
+
+        public List<Crate> crates = new List<Crate>();
     }
 }
