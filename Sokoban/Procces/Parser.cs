@@ -11,47 +11,6 @@ namespace SokobanCLI
     {
         public Game LoadLevel()
         {
-            string winDir = System.Environment.GetEnvironmentVariable("windir");
-            OpenFileDialog fileChooser = new OpenFileDialog();
-            if (fileChooser.ShowDialog() == DialogResult.OK)
-            {
-                MessageBox.Show(fileChooser.FileName.ToString());
-            }
-            /*
-            StreamReader reader = new StreamReader();
-            try
-            {
-                do
-                {
-                    reader.ReadLine();
-                }
-                while (reader.Peek() != -1);
-            }
-
-            finally
-            {
-                reader.Close();
-            }
-            */
-            return null;
-        }
-        /*
-        public void printGame()
-        {
-            for (int i = 0; i < horizontalText.Length; i++)
-            {
-                String vertical = "";
-                for (int y = 0; y < horizontalText[i].Length; y++)
-                {
-                    Console.Write(horizontalText[i][y] + "");
-                }
-                Console.WriteLine();
-            }
-        }
-        */
-    }
-}
-        {
             OpenFileDialog fileChooser = new OpenFileDialog();
             if (fileChooser.ShowDialog() == DialogResult.OK)
             {
@@ -79,4 +38,23 @@ namespace SokobanCLI
                     verticalText[i] = text;
                     text = "";
                 }
+                
+            }
+            return null;
+        }
+        /*
+        public void printGame()
+        {
+            for (int i = 0; i < horizontalText.Length; i++)
+            {
+                String vertical = "";
+                for (int y = 0; y < horizontalText[i].Length; y++)
+                {
+                    Console.Write(horizontalText[i][y] + "");
+                }
+                Console.WriteLine();
+            }
+        }
+        */
+  }
                 
