@@ -304,6 +304,4 @@ __pycache__/
 # OpenCover UI analysis results
 OpenCover/
 
-Sokoban/Sokoban\.csproj
-
 *.ide
