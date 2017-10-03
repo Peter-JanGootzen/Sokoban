@@ -13,14 +13,14 @@ namespace SokobanCLI
 
         private Game _Game;
 
-       
+
         public Controller()
         {
             _Parser = new Parser();
             if (LoadLevel())
             {
                 _CLI = new CLI(this);
-                while (!CheckTruckWon())
+                while (!_Game.CheckTruckWon())
                 {
                     if (_CLI.CatchInput())
                         _CLI.RefreshCLI();
@@ -53,11 +53,6 @@ namespace SokobanCLI
         public bool MoveTruckWest()
         {
             return _Game._Maze._Truck.MoveWest();
-        }
-
-        public bool CheckTruckWon()
-        {
-            return _Game.DestinationsFilled == _Game._Maze._AmountOfDestinations;
         }
     }
 }

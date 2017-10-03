@@ -24,17 +24,17 @@ namespace Sokoban.test
             maze._Truck = new Truck();
             maze._FirstTile = new Wall();
             maze._Length++;
-            maze._FirstTile._East = new Destination();
+            maze._FirstTile._East = new Destination(null);
             maze._FirstTile._East._West = maze._FirstTile;
             maze._Length++;
-            tmpfield = new Field();
+            tmpfield = new Field(null);
             _Crate = new Crate();
             tmpfield._Movable = _Crate;
             tmpfield._Movable._Field = tmpfield;
             maze._FirstTile._East._East = tmpfield;
             maze._FirstTile._East._East._West = maze._FirstTile._East;
             maze._Length++;
-            tmpfield = new Field();
+            tmpfield = new Field(null);
             tmptruck = new Truck();
             tmpfield._Movable = tmptruck;
             maze._Truck = tmptruck;
@@ -61,6 +61,14 @@ namespace Sokoban.test
         public void TestCreation()
         {
             Assert.IsTrue(_Game._Maze._Truck == _Game._Maze._FirstTile._East._East._East._Movable, "Ze zijn niet het zelfde");
+        }
+
+        [Test]
+        public void TestTruckWon()
+        {
+            Assert.IsTrue(_Game.CheckTruckWon());
+            _Game._Maze._Truck.MoveWest();
+            Assert.IsTrue(_Game.CheckTruckWon());
         }
     }
 }

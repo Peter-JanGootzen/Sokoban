@@ -16,6 +16,11 @@ namespace SokobanCLI
             get;
             set;
         }
+
+        public Field(Movable movable)
+        {
+            _Movable = movable;
+        }
         
         public virtual bool MoveOnThis(Crate crate, Direction direction)
         {

@@ -11,12 +11,12 @@
     <Position X="6" Y="0.5" Width="1.5" />
     <AssociationLine Name="_FirstTile" Type="SokobanCLI.Tile">
       <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
-        <Position X="1.194" Y="1.216" Height="0.182" Width="1.253" />
+        <Position X="1.371" Y="1.435" Height="0.182" Width="0.847" />
       </MemberNameLabel>
     </AssociationLine>
     <AssociationLine Name="_LastTile" Type="SokobanCLI.Tile">
       <MemberNameLabel ManuallyPlaced="true">
-        <Position X="-0.775" Y="0.623" />
+        <Position X="-0.64" Y="0.81" />
       </MemberNameLabel>
     </AssociationLine>
     <AssociationLine Name="_Truck" Type="SokobanCLI.Truck" FixedFromPoint="true" FixedToPoint="true">
@@ -62,16 +62,16 @@
     </AssociationLine>
     <AssociationLine Name="_Parser" Type="SokobanCLI.Parser">
       <MemberNameLabel ManuallyPlaced="true">
-        <Position X="0.162" Y="0.3" />
+        <Position X="0.141" Y="0.217" />
       </MemberNameLabel>
     </AssociationLine>
     <AssociationLine Name="_CLI" Type="SokobanCLI.CLI">
       <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
-        <Position X="0.133" Y="-0.807" Height="0.182" Width="0.628" />
+        <Position X="-0.807" Y="0.133" Height="0.182" Width="0.628" />
       </MemberNameLabel>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAEAABQACAEAIAAAAAACAE=</HashCode>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAEAABQACAAAIAAAAAACAE=</HashCode>
       <FileName>Procces\Controller.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -95,7 +95,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="SokobanCLI.CLI">
-    <Position X="0.5" Y="4.75" Width="1.5" />
+    <Position X="0.5" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAQIAAA=</HashCode>
       <FileName>Presentation\CLI.cs</FileName>
@@ -109,7 +109,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="SokobanCLI.Destination">
-    <Position X="4.75" Y="7.75" Width="1.5" />
+    <Position X="4.75" Y="8" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\Destination.cs</FileName>
@@ -145,12 +145,12 @@
         <Point X="3.688" Y="1.087" />
         <Point X="6" Y="1.087" />
       </Path>
-      <MemberNameLabel ManuallyPlaced="true">
-        <Position X="1.55" Y="-1.098" />
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="1.227" Y="-1.098" Height="0.182" Width="0.743" />
       </MemberNameLabel>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAIAAAAAAAAAEAAAAAAAAAIQQAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAEAAAAAAIAAAA=</HashCode>
       <FileName>Model\Game.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
