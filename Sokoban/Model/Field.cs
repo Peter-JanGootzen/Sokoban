@@ -21,6 +21,11 @@ namespace SokobanCLI
         {
             _Movable = movable;
         }
+
+        public Field()
+        {
+
+        }
         
         public bool MoveOnThis(Crate crate, Direction direction)
         {
