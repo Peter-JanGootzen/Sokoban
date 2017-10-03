@@ -44,18 +44,4 @@ namespace SokobanCLI
         }
     }
 }
-        /*
-        public void printGame()
-        {
-            for (int i = 0; i < horizontalText.Length; i++)
-            {
-                String vertical = "";
-                for (int y = 0; y < horizontalText[i].Length; y++)
-                {
-                    Console.Write(horizontalText[i][y] + "");
-                }
-                Console.WriteLine();
-            }
-        }
-        */
                 
