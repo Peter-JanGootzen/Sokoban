@@ -73,7 +73,5 @@ namespace SokobanCLI
         {
             return false;
         }
-
-
     }
 }
