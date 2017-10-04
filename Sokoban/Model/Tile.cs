@@ -32,12 +32,6 @@ namespace SokobanCLI
             set;
         }
 
-        public virtual Movable _Movable
-        {
-            get => null;
-            set { }
-        }
-
         public virtual Boolean MoveOnThis(Movable movable, Direction direction)
         {
             return false;

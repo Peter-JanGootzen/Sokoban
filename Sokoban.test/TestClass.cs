@@ -29,6 +29,7 @@ namespace Sokoban.test
             maze._Length++;
             tmpfield = new Field(null);
             _Crate = new Crate();
+            maze.crates.Add(_Crate);
             tmpfield._Movable = _Crate;
             tmpfield._Movable._Field = tmpfield;
             maze._FirstTile._East._East = tmpfield;
@@ -46,6 +47,7 @@ namespace Sokoban.test
             maze._FirstTile._East._East._East._East._West = maze._FirstTile._East._East._East;
             maze._Length++;
             _Game = new Game(maze);
+            maze._AmountOfDestinations = 1;
         }
 
 
@@ -53,20 +55,23 @@ namespace Sokoban.test
         public void TestMoveOntoThis()
         {
             _Game._Maze._Truck.MoveWest();
-            Assert.IsTrue(_Game._Maze._FirstTile._East._Movable == _Crate);
-            Assert.IsTrue(_Game._Maze._FirstTile._East._East._Movable == _Game._Maze._Truck);
+            Field tmp = (Field) _Game._Maze._FirstTile._East;
+            Assert.IsTrue(tmp._Movable == _Crate);
+            tmp = (Field)_Game._Maze._FirstTile._East._East;
+            Assert.IsTrue(tmp._Movable == _Game._Maze._Truck);
         }
 
         [Test]
         public void TestCreation()
         {
-            Assert.IsTrue(_Game._Maze._Truck == _Game._Maze._FirstTile._East._East._East._Movable, "Ze zijn niet het zelfde");
+            Field tmp = (Field)_Game._Maze._FirstTile._East._East._East;
+            Assert.IsTrue(_Game._Maze._Truck == tmp._Movable, "Ze zijn niet het zelfde");
         }
 
         [Test]
         public void TestTruckWon()
         {
-            Assert.IsTrue(_Game.CheckTruckWon());
+            Assert.IsTrue(!_Game.CheckTruckWon());
             _Game._Maze._Truck.MoveWest();
             Assert.IsTrue(_Game.CheckTruckWon());
         }

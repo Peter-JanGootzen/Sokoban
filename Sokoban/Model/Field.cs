@@ -11,7 +11,7 @@ namespace SokobanCLI
         // TODO
         // Get rid of DirectionConverter, something with delegates or dynamic type overloading.
 
-        public override Movable _Movable
+        public Movable _Movable
         {
             get;
             set;
@@ -24,13 +24,15 @@ namespace SokobanCLI
 
         public Field()
         {
-        }
 
-        public virtual bool MoveOnThis(Crate crate, Direction direction)
+        }
+        
+        public bool MoveOnThis(Crate crate, Direction direction)
         {
             if (_Movable == null)
             {
                 _Movable = crate;
+                crate._Field = this;
             }
             else
                 return false;
@@ -49,6 +51,7 @@ namespace SokobanCLI
                 if (DirectionConverter.Convert(this, direction).MoveOnThis(_Movable, direction))
                 {
                     _Movable = truck;
+                    truck._Field = this;
                     return true;
                 }
                 else
