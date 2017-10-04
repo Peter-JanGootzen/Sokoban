@@ -176,7 +176,52 @@ namespace SokobanCLI
             }
 
         }
-        
+
+        public void PrintMaze(Maze _maze)
+        {
+            Tile currentxaxistile = _maze._FirstTile;
+            Tile currentyaxistile = _maze._FirstTile;
+            while (currentyaxistile != null)
+            {
+                Console.Write(ParseChar(currentxaxistile as dynamic));
+
+                if (currentxaxistile._East != null)
+                    currentxaxistile = currentxaxistile._East;
+                else
+                {
+                    currentyaxistile = currentyaxistile._South;
+                    currentxaxistile = currentyaxistile;
+                    Console.WriteLine();
+                }
+            }
+        }
+
+        public String ParseChar(Field Field)
+        {
+            return ".";
+        }
+        public String ParseChar(Destination Destination)
+        {
+            return "x";
+        }
+
+        public String ParseChar(Crate Crate)
+        {
+            return "o";
+        }
+
+        public String ParseChar(Truck Truck)
+        {
+            return "@";
+        }
+        public String ParseChar(Wall Wall)
+        {
+            return "#";
+        }
+        public String ParseChar(Spacer Spacer)
+        {
+            return " ";
+        }
     }
 }
 
