@@ -23,7 +23,7 @@ namespace SokobanCLI
                 while (!_Game.CheckTruckWon())
                 {
                     if (_CLI.CatchInput())
-                        _CLI.RefreshCLI();
+                        _CLI.RefreshCLI(_Game._Maze._FirstTile);
                 }
             }
 
