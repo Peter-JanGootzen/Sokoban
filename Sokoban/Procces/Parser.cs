@@ -10,25 +10,36 @@ namespace SokobanCLI
 {
     public class Parser
     {
-        // TODO
-        // No type switching
-        // Add crates to the _Crates List in the Maze obj
+        
+
+        //TODO PRINT LEVEL MOET NOG GEMOVED WORDEN DENK IK?
 
         public Game loadLevel()
         {
-            Tile[,] levelArray = ParseLevelFile();
-            GenerateReferences(levelArray);
-            Maze maze = new Maze();
-            maze._FirstTile = levelArray[0, 0];
-            printmazeref(maze);
-            //GENERATE GAME
-            return new Game(null);
+            List<Crate> CrateList;
+            Truck truck = new Truck();
+            Tile[,] LevelArray = ParseLevelFile(out CrateList, ref truck);
+            GenerateReferences(LevelArray);
+
+            
+            return GenerateGame(LevelArray, CrateList, truck);
 
         }
 
-        public Tile[,] ParseLevelFile()
+        private Game GenerateGame(Tile[,] LevelArray, List<Crate> CrateList, Truck Truck)
+        {
+            Maze maze = new Maze(CrateList);
+            maze._FirstTile = LevelArray[0, 0];
+            maze._Truck = Truck;
+            Game game = new Game(maze);
+            
+            return game;
+        }
+
+        public Tile[,] ParseLevelFile(out List<Crate> CrateList, ref Truck Truck)
         {
             Tile[,] tiles;
+            CrateList = new List<Crate>();
             OpenFileDialog fileChooser = new OpenFileDialog();
             if (fileChooser.ShowDialog() == DialogResult.OK)
             {
@@ -62,11 +73,13 @@ namespace SokobanCLI
                             case " ":
                                 tiles[x, y] = new Spacer();
                                 break;
-                            case "@"://HAVE TO ADD TRUCK TO FIELD CONSTRUCTOR.
-                                tiles[x, y] = new Field(new Truck());
+                            case "@":
+                                tiles[x, y] = new Field(Truck);
                                 break;
-                            case "o"://HAVE TO ADD CRATE TO FIELD CONSTRUCTOR
-                                tiles[x, y] = new Field(new Crate());
+                            case "o":
+                                Crate crate = new Crate();
+                                CrateList.Add(crate);
+                                tiles[x, y] = new Field(crate);
                                 break;
                             case "x":
                                 tiles[x, y] = new Destination();
@@ -164,7 +177,7 @@ namespace SokobanCLI
 
         }
 
-        public void printmazeref(Maze _maze)
+        public void PrintMaze(Maze _maze)
         {
             Tile currentxaxistile = _maze._FirstTile;
             Tile currentyaxistile = _maze._FirstTile;

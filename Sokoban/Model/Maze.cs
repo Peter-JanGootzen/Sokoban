@@ -7,26 +7,16 @@ namespace SokobanCLI
 {
     public class Maze
     {
-
-        public int _AmountOfDestinations
+        public Maze(List<Crate> crateList)
         {
-            get;
-            set;
+            this.crates = crateList;
+        }
+
+        public Maze()
+        {
         }
 
         public Tile _FirstTile
-        {
-            get;
-            set;
-        }
-
-        public Tile _LastTile
-        {
-            get;
-            set;
-        }
-
-        public int _Length
         {
             get;
             set;
@@ -39,5 +29,8 @@ namespace SokobanCLI
         }
 
         public List<Crate> crates = new List<Crate>();
+
+
+        
     }
 }

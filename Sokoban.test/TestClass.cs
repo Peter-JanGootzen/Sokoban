@@ -23,10 +23,8 @@ namespace Sokoban.test
             Truck tmptruck;
             maze._Truck = new Truck();
             maze._FirstTile = new Wall();
-            maze._Length++;
             maze._FirstTile._East = new Destination(null);
             maze._FirstTile._East._West = maze._FirstTile;
-            maze._Length++;
             tmpfield = new Field(null);
             _Crate = new Crate();
             maze.crates.Add(_Crate);
@@ -34,7 +32,6 @@ namespace Sokoban.test
             tmpfield._Movable._Field = tmpfield;
             maze._FirstTile._East._East = tmpfield;
             maze._FirstTile._East._East._West = maze._FirstTile._East;
-            maze._Length++;
             tmpfield = new Field(null);
             tmptruck = new Truck();
             tmpfield._Movable = tmptruck;
@@ -42,12 +39,9 @@ namespace Sokoban.test
             tmpfield._Movable._Field = tmpfield;
             maze._FirstTile._East._East._East = tmpfield;
             maze._FirstTile._East._East._East._West = maze._FirstTile._East._East;
-            maze._Length++;
             maze._FirstTile._East._East._East._East = new Wall();
             maze._FirstTile._East._East._East._East._West = maze._FirstTile._East._East._East;
-            maze._Length++;
             _Game = new Game(maze);
-            maze._AmountOfDestinations = 1;
         }
 
 
