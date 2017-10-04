@@ -17,9 +17,10 @@ namespace SokobanCLI
         public Game loadLevel()
         {
             Tile[,] levelArray = ParseLevelFile();
+            GenerateReferences(levelArray);
             Maze maze = new Maze();
             maze._FirstTile = levelArray[0, 0];
-            GenerateReferences(levelArray);
+            printmazeref(maze);
             //GENERATE GAME
             return new Game(null);
 
@@ -163,95 +164,51 @@ namespace SokobanCLI
 
         }
 
+        public void printmazeref(Maze _maze)
+        {
+            Tile currentxaxistile = _maze._FirstTile;
+            Tile currentyaxistile = _maze._FirstTile;
+            while (currentyaxistile != null)
+            {
+                Console.Write(ParseChar(currentxaxistile as dynamic));
 
+                if (currentxaxistile._East != null)
+                    currentxaxistile = currentxaxistile._East;
+                else
+                {
+                    currentyaxistile = currentyaxistile._South;
+                    currentxaxistile = currentyaxistile;
+                    Console.WriteLine();
+                }
+            }
+        }
 
-        //public void printMazeFor(Tile[,] tiles)
-        //{
-        //    for (int y = 0; y < tiles.GetLength(1); y++)
-        //    {
-        //        for (int x = 0; x < tiles.GetLength(0); x++)
-        //        {
-        //            if (tiles[x, y] != null)
-        //            {
-        //                switch (tiles[x, y].GetType().Name)
-        //                {
-        //                    case "Wall":
-        //                        Console.Write("#");
-        //                        break;
-        //                    case "Field":
-        //                        if (tiles[x, y]._Movable == null)
-        //                        {
-        //                            Console.Write(".");
-        //                        }
-        //                        else if (tiles[x, y]._Movable.GetType().Name.Equals("Crate"))
-        //                        {
-        //                            Console.Write("o");
-        //                        }
-        //                        else if (tiles[x, y]._Movable.GetType().Name.Equals("Truck"))
-        //                        {
-        //                            Console.Write("@");
-        //                        }
+        public String ParseChar(Field Field)
+        {
+            return ".";
+        }
+        public String ParseChar(Destination Destination)
+        {
+            return "x";
+        }
 
-        //                        break;
-        //                    case "Spacer":
-        //                        Console.Write(" ");
-        //                        break;
-        //                    case "Destination":
-        //                        Console.Write("x");
-        //                        break;
-        //                }
-        //            }
+        public String ParseChar(Crate Crate)
+        {
+            return "o";
+        }
 
-        //        }
-        //        Console.WriteLine();
-
-        //    }
-        //}
-
-        //public void printMazeRef(Maze _Maze)
-        //{
-        //    Tile CurrentXAxisTile = _Maze._FirstTile;
-        //    Tile CurrentYAxisTile = _Maze._FirstTile;
-        //    while (CurrentYAxisTile != null)
-        //    {
-        //        switch (CurrentXAxisTile.GetType().Name)
-        //        {
-        //            case "Wall":
-        //                Console.Write("#");
-        //                break;
-        //            case "Field":
-        //                if (CurrentXAxisTile._Movable == null)
-        //                {
-        //                    Console.Write(".");
-        //                }
-        //                else if (CurrentXAxisTile._Movable.GetType().Name.Equals("Crate"))
-        //                {
-        //                    Console.Write("o");
-        //                }
-        //                else if (CurrentXAxisTile._Movable.GetType().Name.Equals("Truck"))
-        //                {
-        //                    Console.Write("@");
-        //                }
-
-        //                break;
-        //            case "Spacer":
-        //                Console.Write(" ");
-        //                break;
-        //            case "Destination":
-        //                Console.Write("x");
-        //                break;
-        //        }
-
-        //        if (CurrentXAxisTile._East != null)
-        //            CurrentXAxisTile = CurrentXAxisTile._East;
-        //        else
-        //        {
-        //            CurrentYAxisTile = CurrentYAxisTile._South;
-        //            CurrentXAxisTile = CurrentYAxisTile;
-        //            Console.WriteLine();
-        //        }
-        //    }
-        //}
+        public String ParseChar(Truck Truck)
+        {
+            return "@";
+        }
+        public String ParseChar(Wall Wall)
+        {
+            return "#";
+        }
+        public String ParseChar(Spacer Spacer)
+        {
+            return " ";
+        }
     }
 }
 
