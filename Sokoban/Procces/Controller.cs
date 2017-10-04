@@ -31,7 +31,7 @@ namespace SokobanCLI
 
         public bool LoadLevel()
         {
-            _Game = _Parser.ParseLevelFile();
+            _Game = _Parser.loadLevel();
             return _Game != null;
         }
 
