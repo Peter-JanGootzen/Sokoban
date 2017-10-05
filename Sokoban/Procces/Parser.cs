@@ -12,12 +12,14 @@ namespace SokobanCLI
     {
         public Game loadLevel()
         {
-            List<Crate> CrateList;
+            List<Crate> CrateList = null;
             Truck truck = new Truck();
-            Tile[,] LevelArray = ParseLevelFile(out CrateList, ref truck);
+            Tile[,] LevelArray = null;
+            while (LevelArray == null)
+            {
+               LevelArray = ParseLevelFile(out CrateList, ref truck);
+            } 
             GenerateReferences(LevelArray);
-
-            
             return GenerateGame(LevelArray, CrateList, truck);
 
         }
@@ -85,7 +87,7 @@ namespace SokobanCLI
                 }
                 return tiles;
             }
-            return null;
+            return null;            
         }
 
         public void GenerateReferences(Tile[,] tiles)

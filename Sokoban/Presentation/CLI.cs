@@ -36,6 +36,15 @@ namespace SokobanCLI
             }
         }
 
+        public void endScreen()
+        {
+            Console.Clear();
+            Console.WriteLine("You won!");
+            Console.WriteLine("Press any key to load another level");
+            Console.ReadKey();
+            controller.StartGame();
+        }
+
         public bool CatchInput()
         {
             switch (Console.ReadKey().Key)
@@ -59,7 +68,17 @@ namespace SokobanCLI
             if (field._Movable != null)
                 return ParseMovableChar(field._Movable as dynamic);
             else
-                return ".";
+                return ParseFieldChar(field as dynamic);
+        }
+
+        private String ParseFieldChar(Field field)
+        {
+            return ".";
+        }
+
+        private String ParseFieldChar(Destination destination)
+        {
+            return "x";
         }
 
         private String ParseMovableChar(Truck truck)

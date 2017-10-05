@@ -17,17 +17,23 @@ namespace SokobanCLI
         public Controller()
         {
             _Parser = new Parser();
+            _CLI = new CLI(this);
+            StartGame();
+
+        }
+
+        public void StartGame()
+        {
             if (LoadLevel())
             {
-                _CLI = new CLI(this);
                 _CLI.RefreshCLI(_Game._Maze._FirstTile);
                 while (!_Game.CheckTruckWon())
                 {
                     if (_CLI.CatchInput())
                         _CLI.RefreshCLI(_Game._Maze._FirstTile);
                 }
+                _CLI.endScreen();
             }
-
         }
 
         public bool LoadLevel()
