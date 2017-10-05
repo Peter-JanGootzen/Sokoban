@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sokoban;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -38,6 +39,17 @@ namespace SokobanCLI
             {
                 _Movable = crate;
                 crate._Field = this;
+            }
+            else
+                return false;
+            return true;
+        }
+
+        public virtual bool MoveOnThis(Employee employee, Direction direction)
+        {
+            if (_Movable == null)
+            {
+                _Movable = employee;
             }
             else
                 return false;

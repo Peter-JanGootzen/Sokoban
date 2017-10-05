@@ -16,8 +16,8 @@
     </AssociationLine>
     <AssociationLine Name="_Truck" Type="SokobanCLI.Truck" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="7.5" Y="1.148" />
-        <Point X="13.312" Y="1.148" />
+        <Point X="7.5" Y="1.336" />
+        <Point X="13.312" Y="1.336" />
         <Point X="13.312" Y="8" />
       </Path>
       <MemberNameLabel ManuallyPlaced="true">
@@ -25,7 +25,7 @@
       </MemberNameLabel>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AABAAAAAEAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AABAAAAAEAAAAgAAAAAAAAAAAAABAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\Maze.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -41,7 +41,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="SokobanCLI.Crate" Collapsed="true">
-    <Position X="9" Y="8" Width="1.5" />
+    <Position X="8.75" Y="8" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\Crate.cs</FileName>
@@ -136,8 +136,8 @@
     <AssociationLine Name="_Maze" Type="SokobanCLI.Maze" FixedFromPoint="true" FixedToPoint="true">
       <Path>
         <Point X="3.688" Y="2.25" />
-        <Point X="3.688" Y="1.087" />
-        <Point X="6" Y="1.087" />
+        <Point X="3.688" Y="1.257" />
+        <Point X="6" Y="1.257" />
       </Path>
       <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
         <Position X="1.227" Y="-1.098" Height="0.182" Width="0.743" />
@@ -156,6 +156,13 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAQEAAgAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\Trapdoor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sokoban.Employee" Collapsed="true">
+    <Position X="10.5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Employee.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Enum Name="SokobanCLI.Direction">

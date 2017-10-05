@@ -13,28 +13,30 @@ namespace SokobanCLI
         public Game loadLevel()
         {
             List<Crate> CrateList = null;
-            Truck truck = new Truck();
+            Truck Truck = new Truck();
+            Employee Employee = new Employee();
             Tile[,] LevelArray = null;
             while (LevelArray == null)
             {
-               LevelArray = ParseLevelFile(out CrateList, ref truck);
+               LevelArray = ParseLevelFile(out CrateList, ref Truck, ref Employee);
             } 
             GenerateReferences(LevelArray);
-            return GenerateGame(LevelArray, CrateList, truck);
+            return GenerateGame(LevelArray, CrateList, Truck, Employee);
 
         }
 
-        private Game GenerateGame(Tile[,] LevelArray, List<Crate> CrateList, Truck Truck)
+        private Game GenerateGame(Tile[,] LevelArray, List<Crate> CrateList, Truck Truck, Employee Employee)
         {
             Maze maze = new Maze(CrateList);
             maze._FirstTile = LevelArray[0, 0];
             maze._Truck = Truck;
+            maze._Employee = Employee;
             Game game = new Game(maze);
             
             return game;
         }
 
-        public Tile[,] ParseLevelFile(out List<Crate> CrateList, ref Truck Truck)
+        public Tile[,] ParseLevelFile(out List<Crate> CrateList, ref Truck Truck, ref Employee Employee)
         {
             Tile[,] tiles;
             CrateList = new List<Crate>();
@@ -84,6 +86,10 @@ namespace SokobanCLI
                                 break;
                             case "~":
                                 tiles[x, y] = new Trapdoor();
+                                break;
+                            case "$":
+                                tiles[x, y] = new Field(Employee);
+                                
                                 break;
                         }
                     }

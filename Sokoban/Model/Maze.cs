@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sokoban;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,11 @@ namespace SokobanCLI
         }
 
         public Truck _Truck
+        {
+            get;
+            set;
+        }
+        public Employee _Employee
         {
             get;
             set;
