@@ -18,11 +18,12 @@ namespace SokobanCLI
 
         public void RefreshCLI(Tile firstTile)
         {
+            Console.Clear();
             Tile currentxaxistile = firstTile;
             Tile currentyaxistile = firstTile;
             while (currentyaxistile != null)
             {
-                Console.Write(ParseChar(currentxaxistile as dynamic));
+                Console.Write(ParseTileChar(currentxaxistile as dynamic));
 
                 if (currentxaxistile._East != null)
                     currentxaxistile = currentxaxistile._East;
@@ -52,29 +53,31 @@ namespace SokobanCLI
             }
             return false;
         }
-        public String ParseChar(Field Field)
+
+        private String ParseTileChar(Field field)
         {
-            return ".";
-        }
-        public String ParseChar(Destination Destination)
-        {
-            return "x";
+            if (field._Movable != null)
+                return ParseMovableChar(field._Movable as dynamic);
+            else
+                return ".";
         }
 
-        public String ParseChar(Crate Crate)
+        private String ParseMovableChar(Truck truck)
+        {
+            return "@";
+        }
+
+        private String ParseMovableChar(Crate crate)
         {
             return "o";
         }
 
-        public String ParseChar(Truck Truck)
-        {
-            return "@";
-        }
-        public String ParseChar(Wall Wall)
+        private String ParseTileChar(Wall wall)
         {
             return "#";
         }
-        public String ParseChar(Spacer Spacer)
+
+        private String ParseTileChar(Spacer spacer)
         {
             return " ";
         }

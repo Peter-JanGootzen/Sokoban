@@ -20,6 +20,7 @@ namespace SokobanCLI
             if (LoadLevel())
             {
                 _CLI = new CLI(this);
+                _CLI.RefreshCLI(_Game._Maze._FirstTile);
                 while (!_Game.CheckTruckWon())
                 {
                     if (_CLI.CatchInput())

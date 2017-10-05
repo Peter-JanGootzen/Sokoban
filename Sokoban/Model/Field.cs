@@ -11,10 +11,15 @@ namespace SokobanCLI
         // TODO
         // Get rid of DirectionConverter, something with delegates or dynamic type overloading.
 
+        private Movable Movable;
         public Movable _Movable
         {
-            get;
-            set;
+            get { return Movable; }
+            set {
+                Movable = value;
+                if(Movable != null)
+                    Movable._Field = this;
+            }
         }
 
         public Field(Movable movable)

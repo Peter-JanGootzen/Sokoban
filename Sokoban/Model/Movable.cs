@@ -15,22 +15,50 @@ namespace SokobanCLI
 
         public bool MoveNorth()
         {
-            return _Field._North.MoveOnThis(this, Direction.UP);
+            Field tmp = _Field;
+            if (_Field._North.MoveOnThis(this, Direction.UP))
+            {
+                tmp._Movable = null;
+                return true;
+            }
+            else
+                return false;
         }
 
         public bool MoveEast()
         {
-            return _Field._East.MoveOnThis(this, Direction.RIGHT);
+            Field tmp = _Field;
+            if (_Field._East.MoveOnThis(this, Direction.RIGHT))
+            {
+                tmp._Movable = null;
+                return true;
+            }
+            else
+                return false;
         }
 
         public bool MoveSouth()
         {
-            return _Field._South.MoveOnThis(this, Direction.DOWN);
+            Field tmp = _Field;
+            if (_Field._South.MoveOnThis(this, Direction.DOWN))
+            {
+                tmp._Movable = null;
+                return true;
+            }
+            else
+                return false;
         }
 
         public bool MoveWest()
         {
-            return _Field._West.MoveOnThis(this, Direction.LEFT);
+            Field tmp = _Field;
+            if (_Field._West.MoveOnThis(this, Direction.LEFT))
+            {
+                tmp._Movable = null;
+                return true;
+            }
+            else
+                return false;
         }
     }
 }
