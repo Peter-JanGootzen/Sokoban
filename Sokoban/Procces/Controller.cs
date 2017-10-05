@@ -49,7 +49,6 @@ namespace SokobanCLI
 
         public bool MoveTruckEast()
         {
-            _Game._Maze._Employee.MoveRandom();
             return _Game._Maze._Truck.MoveEast() || _Game._Maze._Employee.MoveRandom(); ;
         }
 

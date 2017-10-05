@@ -8,7 +8,7 @@ namespace Sokoban
 {
     public class Employee : Movable
     {
-        public bool _Active = false;
+        public bool _Active {set; get;}
 
         public bool MoveRandom()
         {
@@ -41,11 +41,6 @@ namespace Sokoban
                     MoveWest();
                 }
             }
-            return _Active;
-        }
-
-        public bool IsActive()
-        {
             return _Active;
         }
     }

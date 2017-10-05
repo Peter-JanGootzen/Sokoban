@@ -99,9 +99,10 @@ namespace SokobanCLI
 
         private String ParseMovableChar(Employee employee)
         {
-            if (employee.IsActive())
+            if (employee._Active)
                 return "$";
-            return "Z";
+            else
+                return "Z";
         }
 
         private String ParseMovableChar(Crate crate)
