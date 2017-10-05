@@ -10,7 +10,7 @@ namespace Sokoban
     {
         public bool _Active = false;
 
-        public void MoveRandom()
+        public bool MoveRandom()
         {
             Random r = new Random();
             int random = r.Next(100) + 1;
@@ -22,6 +22,26 @@ namespace Sokoban
             {
                 _Active = false;
             }
+            if (_Active)
+            {
+                if(random <= 25)
+                {
+                    MoveNorth();
+                }
+                else if(random > 25 && random <= 50)
+                {
+                    MoveSouth();
+                }
+                else if(random > 50 && random <= 75)
+                {
+                    MoveEast();
+                }
+                else if(random > 75 && random <= 100)
+                {
+                    MoveWest();
+                }
+            }
+            return _Active;
         }
 
         public bool IsActive()

@@ -50,14 +50,25 @@ namespace SokobanCLI
             if (_Movable == null)
             {
                 _Movable = employee;
+                return true;
             }
             else
-                return false;
-            return true;
+            {
+                if (DirectionConverter.Convert(this, direction).MoveOnThis(_Movable, direction))
+                {
+                    _Movable = employee;
+                    employee._Field = this;
+                    return true;
+                }
+                else
+                    return false;
+            }
         }
 
         public virtual bool MoveOnThis(Truck truck, Direction direction)
         {
+            if (_Movable != null && SetEmployeeActive(_Movable as dynamic) )
+                return false;
             if (_Movable == null)
             {
                 _Movable = truck;
@@ -65,7 +76,7 @@ namespace SokobanCLI
             }
             else
             {
-                if (DirectionConverter.Convert(this, direction).MoveOnThis(_Movable, direction))
+                if ( DirectionConverter.Convert(this, direction).MoveOnThis(_Movable, direction))
                 {
                     _Movable = truck;
                     truck._Field = this;
@@ -80,5 +91,16 @@ namespace SokobanCLI
         {
             return MoveOnThis(movable as dynamic, direction);
         }
+
+        public bool SetEmployeeActive(Employee employee)
+        {
+            employee._Active = true;
+            return true;
+        }
+        public bool SetEmployeeActive(Crate crate)
+        {
+            return false;
+        }
+
     }
 }

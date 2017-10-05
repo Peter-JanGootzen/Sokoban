@@ -44,26 +44,23 @@ namespace SokobanCLI
 
         public bool MoveTruckNorth()
         {
-            _Game._Maze._Employee.MoveRandom();
-            return _Game._Maze._Truck.MoveNorth();
+            return _Game._Maze._Truck.MoveNorth() || _Game._Maze._Employee.MoveRandom();
         }
 
         public bool MoveTruckEast()
         {
             _Game._Maze._Employee.MoveRandom();
-            return _Game._Maze._Truck.MoveEast();
+            return _Game._Maze._Truck.MoveEast() || _Game._Maze._Employee.MoveRandom(); ;
         }
 
         public bool MoveTruckSouth()
         {
-            _Game._Maze._Employee.MoveRandom();
-            return _Game._Maze._Truck.MoveSouth();
+            return _Game._Maze._Truck.MoveSouth() || _Game._Maze._Employee.MoveRandom(); ;
         }
 
         public bool MoveTruckWest()
         {
-            _Game._Maze._Employee.MoveRandom();
-            return _Game._Maze._Truck.MoveWest();
+            return _Game._Maze._Truck.MoveWest() || _Game._Maze._Employee.MoveRandom(); ;
         }
     }
 }
