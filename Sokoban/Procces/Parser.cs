@@ -10,9 +10,6 @@ namespace SokobanCLI
 {
     public class Parser
     {
-
-        //TODO PRINT LEVEL MOET NOG GEMOVED WORDEN DENK IK?
-
         public Game loadLevel()
         {
             List<Crate> CrateList;

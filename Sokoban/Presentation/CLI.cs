@@ -74,7 +74,7 @@ namespace SokobanCLI
 
         private String ParseTileChar(Wall wall)
         {
-            return "#";
+            return "█";
         }
 
         private String ParseTileChar(Spacer spacer)
