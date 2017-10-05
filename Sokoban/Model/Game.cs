@@ -64,6 +64,17 @@ namespace SokobanCLI
                 return false;
         }
 
+        public bool CheckTruckLost()
+        {
+            bool lost = false;
+            _Maze.crates.ForEach(c =>
+            {
+                if (c._Field == null)
+                    lost = true;
+            });
+            return lost;
+        }
+
         private bool CheckCrateOnDestination(Crate crate, Destination destination)
         {
             return true;

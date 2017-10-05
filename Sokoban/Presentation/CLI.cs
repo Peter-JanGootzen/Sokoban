@@ -36,10 +36,13 @@ namespace SokobanCLI
             }
         }
 
-        public void endScreen()
+        public void endScreen(bool lost)
         {
             Console.Clear();
-            Console.WriteLine("You won!");
+            if (lost != true)
+                Console.WriteLine("You won!");
+            else
+                Console.WriteLine("You lost!");
             Console.WriteLine("Press any key to load another level");
             Console.ReadKey();
             controller.StartGame();
@@ -79,6 +82,14 @@ namespace SokobanCLI
         private String ParseFieldChar(Destination destination)
         {
             return "x";
+        }
+
+        private String ParseFieldChar(Trapdoor trapdoor)
+        {
+            if (trapdoor.PlacedCounter >= 3)
+                return " ";
+            else
+                return "~";
         }
 
         private String ParseMovableChar(Truck truck)

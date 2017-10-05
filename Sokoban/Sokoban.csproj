@@ -59,6 +59,7 @@
     <Compile Include="Model\Truck.cs" />
     <Compile Include="Model\Game.cs" />
     <Compile Include="Model\Spacer.cs" />
+    <Compile Include="Model\Trapdoor.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">

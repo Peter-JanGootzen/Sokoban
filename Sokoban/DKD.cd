@@ -14,11 +14,6 @@
         <Position X="1.371" Y="1.435" Height="0.182" Width="0.847" />
       </MemberNameLabel>
     </AssociationLine>
-    <AssociationLine Name="_LastTile" Type="SokobanCLI.Tile">
-      <MemberNameLabel ManuallyPlaced="true">
-        <Position X="-0.64" Y="0.81" />
-      </MemberNameLabel>
-    </AssociationLine>
     <AssociationLine Name="_Truck" Type="SokobanCLI.Truck" FixedFromPoint="true" FixedToPoint="true">
       <Path>
         <Point X="7.5" Y="1.148" />
@@ -30,12 +25,11 @@
       </MemberNameLabel>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AABAAAQAAAAAAgAAAAgAAIAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AABAAAAAEAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\Maze.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="_FirstTile" />
-      <Property Name="_LastTile" />
       <Property Name="_Truck" />
     </ShowAsAssociation>
   </Class>
@@ -55,11 +49,6 @@
   </Class>
   <Class Name="SokobanCLI.Controller">
     <Position X="0.5" Y="2.5" Width="1.5" />
-    <AssociationLine Name="_Game" Type="SokobanCLI.Game">
-      <MemberNameLabel ManuallyPlaced="true">
-        <Position X="0.162" Y="0.07" />
-      </MemberNameLabel>
-    </AssociationLine>
     <AssociationLine Name="_Parser" Type="SokobanCLI.Parser">
       <MemberNameLabel ManuallyPlaced="true">
         <Position X="0.141" Y="0.217" />
@@ -70,48 +59,53 @@
         <Position X="-0.807" Y="0.133" Height="0.182" Width="0.628" />
       </MemberNameLabel>
     </AssociationLine>
+    <AssociationLine Name="_Game" Type="SokobanCLI.Game">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.162" Y="0.07" />
+      </MemberNameLabel>
+    </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAEAABQACAAAIAAAAAACAE=</HashCode>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAkAABQACAAAIAAAAAACAE=</HashCode>
       <FileName>Procces\Controller.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Field Name="_Game" />
       <Field Name="_Parser" />
       <Field Name="_CLI" />
+      <Field Name="_Game" />
     </ShowAsAssociation>
   </Class>
   <Class Name="SokobanCLI.Tile">
     <Position X="7.75" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAgAAAAAAAgAAAAgAAAAAAAAAAAAAAAAApAAAAA=</HashCode>
+      <HashCode>AAAAAAgAAAAAAAgAAAAgAAAAAAAAAAAAAAAAAoAAAAA=</HashCode>
       <FileName>Model\Tile.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SokobanCLI.Parser">
     <Position X="0.5" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAA=</HashCode>
+      <HashCode>AAAQAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAEgAAAAA=</HashCode>
       <FileName>Procces\Parser.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SokobanCLI.CLI">
     <Position X="0.5" Y="5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAQIAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAIAEAAAAAAgAAAAAAAgAAAAIAAAQIAAA=</HashCode>
       <FileName>Presentation\CLI.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SokobanCLI.Field">
     <Position X="4.75" Y="5.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
+      <HashCode>AAAAAAAQAAAAAAAAAAAgAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
       <FileName>Model\Field.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SokobanCLI.Destination">
-    <Position X="4.75" Y="8" Width="1.5" />
+    <Position X="4.75" Y="9.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\Destination.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -150,18 +144,25 @@
       </MemberNameLabel>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAEAAAAAAIAAAA=</HashCode>
+      <HashCode>QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAIAAEA=</HashCode>
       <FileName>Model\Game.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="_Maze" />
     </ShowAsAssociation>
   </Class>
+  <Class Name="Sokoban.Trapdoor">
+    <Position X="7.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQEAAgAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Trapdoor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Enum Name="SokobanCLI.Direction">
     <Position X="11.5" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAICAAAgAAAAAAAAAAA=</HashCode>
-      <FileName>Direction.cs</FileName>
+      <FileName>Model\Direction.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Font Name="Segoe UI" Size="9" />

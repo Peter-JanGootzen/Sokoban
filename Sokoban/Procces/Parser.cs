@@ -82,6 +82,9 @@ namespace SokobanCLI
                             case "x":
                                 tiles[x, y] = new Destination();
                                 break;
+                            case "~":
+                                tiles[x, y] = new Trapdoor();
+                                break;
                         }
                     }
                 }

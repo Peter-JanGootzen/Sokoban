@@ -27,12 +27,12 @@ namespace SokobanCLI
             if (LoadLevel())
             {
                 _CLI.RefreshCLI(_Game._Maze._FirstTile);
-                while (!_Game.CheckTruckWon())
+                while (!_Game.CheckTruckWon() && !_Game.CheckTruckLost())
                 {
                     if (_CLI.CatchInput())
                         _CLI.RefreshCLI(_Game._Maze._FirstTile);
                 }
-                _CLI.endScreen();
+                _CLI.endScreen(_Game.CheckTruckLost());
             }
         }
 
