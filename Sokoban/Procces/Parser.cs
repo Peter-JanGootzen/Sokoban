@@ -41,7 +41,12 @@ namespace SokobanCLI
             OpenFileDialog fileChooser = new OpenFileDialog();
             if (fileChooser.ShowDialog() == DialogResult.OK)
             {
+                if (!Path.GetFileName(fileChooser.FileName).Substring(0, 7).Equals("doolhof"))
+                {
+                    return null;
+                }
                 String[] horizontalText = File.ReadAllLines(fileChooser.FileName.ToString());
+
                 int largestHeight = 0;
                 int largestWidth = 0;
                 for (int i = 0; i < horizontalText.Length; i++)
