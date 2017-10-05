@@ -72,7 +72,7 @@ namespace SokobanCLI
         }
         public String ParseChar(Wall Wall)
         {
-            return "#";
+            return "█";
         }
         public String ParseChar(Spacer Spacer)
         {
