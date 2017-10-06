@@ -66,7 +66,7 @@
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="DKD.cd" />
+    <None Include="AKD.cd" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

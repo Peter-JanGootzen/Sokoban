@@ -9,20 +9,6 @@ namespace SokobanCLI
     public class Field : Tile
     {
 
-        // TODO
-        // Get rid of DirectionConverter, something with delegates or dynamic type overloading.
-
-        private Movable Movable;
-        public Movable _Movable
-        {
-            get { return Movable; }
-            set {
-                Movable = value;
-                if(Movable != null)
-                    Movable._Field = this;
-            }
-        }
-
         public Field(Movable movable)
         {
             _Movable = movable;
@@ -32,7 +18,19 @@ namespace SokobanCLI
         {
 
         }
-        
+
+        private Movable Movable;
+        public Movable _Movable
+        {
+            get { return Movable; }
+            set
+            {
+                Movable = value;
+                if (Movable != null)
+                    Movable._Field = this;
+            }
+        }
+
         public virtual bool MoveOnThis(Crate crate, Direction direction)
         {
             if (_Movable == null)
@@ -67,7 +65,7 @@ namespace SokobanCLI
 
         public virtual bool MoveOnThis(Truck truck, Direction direction)
         {
-            if (_Movable != null && SetEmployeeActive(_Movable as dynamic) )
+            if (_Movable != null && SetEmployeeActive(_Movable as dynamic))
                 return false;
             if (_Movable == null)
             {
@@ -76,7 +74,7 @@ namespace SokobanCLI
             }
             else
             {
-                if ( DirectionConverter.Convert(this, direction).MoveOnThis(_Movable, direction))
+                if (DirectionConverter.Convert(this, direction).MoveOnThis(_Movable, direction))
                 {
                     _Movable = truck;
                     truck._Field = this;
@@ -86,7 +84,7 @@ namespace SokobanCLI
                     return false;
             }
         }
-        
+
         public override bool MoveOnThis(Movable movable, Direction direction)
         {
             return MoveOnThis(movable as dynamic, direction);
