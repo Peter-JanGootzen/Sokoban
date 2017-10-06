@@ -9,20 +9,6 @@ namespace SokobanCLI
     public class Field : Tile
     {
 
-        // TODO
-        // Get rid of DirectionConverter, something with delegates or dynamic type overloading.
-
-        private Movable Movable;
-        public Movable _Movable
-        {
-            get { return Movable; }
-            set {
-                Movable = value;
-                if(Movable != null)
-                    Movable._Field = this;
-            }
-        }
-
         public Field(Movable movable)
         {
             _Movable = movable;
@@ -32,7 +18,13 @@ namespace SokobanCLI
         {
 
         }
-        
+
+        public Movable _Movable
+        {
+            get;
+            set;
+        }
+
         public virtual bool MoveOnThis(Crate crate, Direction direction)
         {
             if (_Movable == null)
