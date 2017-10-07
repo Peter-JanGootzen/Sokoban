@@ -12,6 +12,8 @@ namespace Sokoban
 
         public bool MoveRandom()
         {
+            if (_Field == null) // If the Employee is not in the game, we return false so that the view doesn't update and so that he doesn't try to move and make null pointer exceptions
+                return false;
             Random r = new Random();
             int random = r.Next(100) + 1;
             if(!_Active && random >= 90)
