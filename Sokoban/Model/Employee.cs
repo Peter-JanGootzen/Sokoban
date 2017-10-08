@@ -24,6 +24,7 @@ namespace Sokoban
             {
                 _Active = false;
             }
+            random = r.Next(100) + 1;
             if (_Active)
             {
                 if(random <= 25)
