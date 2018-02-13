@@ -43,7 +43,7 @@ namespace SokobanCLI
             OpenFileDialog fileChooser = new OpenFileDialog();
             if (fileChooser.ShowDialog() == DialogResult.OK)
             {
-                if (!Path.GetFileName(fileChooser.FileName).Substring(0, 7).Equals("doolhof"))
+                if (!Path.GetFileName(fileChooser.FileName).Contains("level"))
                 {
                     return null;
                 }
